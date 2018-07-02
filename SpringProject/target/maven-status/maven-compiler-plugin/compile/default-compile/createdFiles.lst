@@ -1,0 +1,12 @@
+com\vel\springdemo\entity\Role.class
+com\vel\springdemo\service\CustomerServiceOracle.class
+com\vel\springdemo\dao\CustomerDAOOracle.class
+com\vel\springdemo\controller\CustomerRestController.class
+com\vel\springdemo\dao\CustomerDAO.class
+com\vel\springdemo\dao\CustomerDAOImplOracle.class
+com\vel\springdemo\service\CustomerServiceImplOracle.class
+com\vel\springdemo\service\CustomerService.class
+com\vel\springdemo\entity\Customer.class
+com\vel\springdemo\dao\CustomerDAOImpl.class
+com\vel\springdemo\controller\CustomerController.class
+com\vel\springdemo\service\CustomerServiceImpl.class
