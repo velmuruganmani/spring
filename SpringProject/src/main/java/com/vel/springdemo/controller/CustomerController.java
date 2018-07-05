@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 //import com.vel.springdemo.dao.CustomerDAO;
 import com.vel.springdemo.entity.Customer;
-import com.vel.springdemo.entity.Role;
+//import com.vel.springdemo.entity.Role;
 import com.vel.springdemo.service.CustomerService;
-import com.vel.springdemo.service.CustomerServiceOracle;
+//import com.vel.springdemo.service.CustomerServiceOracle;
 import javax.validation.Valid;
 
 @Controller
@@ -25,8 +25,10 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 	
+	/* Roles from Oracle Database
 	@Autowired
 	private CustomerServiceOracle customerServiceOracle;
+	*/
 	
 	// need to inject the customer dao
 	/* It's removed due to service layer
@@ -100,6 +102,7 @@ public class CustomerController {
 		return "redirect:/customer/list";
 	}
 	
+	/* Roles from Oracle Database
 	@GetMapping("/showRole")
 	public String showRole(Model theModel) {
 		
@@ -108,4 +111,5 @@ public class CustomerController {
 		
 		return "oraclerole";
 	}
+	*/
 }

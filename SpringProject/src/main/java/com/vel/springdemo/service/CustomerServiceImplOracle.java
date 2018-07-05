@@ -1,5 +1,5 @@
 package com.vel.springdemo.service;
-
+/*
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,3 +19,4 @@ public class CustomerServiceImplOracle implements CustomerServiceOracle {
 		return customerDAOOracle.getRoles();
 	}
 }
+*/

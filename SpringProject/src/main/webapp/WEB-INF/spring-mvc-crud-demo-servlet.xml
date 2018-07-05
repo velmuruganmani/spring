@@ -41,7 +41,7 @@
         <property name="maxPoolSize" value="20" />
         <property name="maxIdleTime" value="30000" />
 	</bean>  
-		-->
+	-->
 		
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
@@ -52,18 +52,20 @@
         <property name="minPoolSize" value="3" />
         <property name="maxPoolSize" value="20" />
         <property name="maxIdleTime" value="30000" />
-	</bean>  		
+	</bean> 
+	<!--	
 	<bean id="myDataSourceOracle" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
         <property name="jdbcUrl" value="jdbc:oracle:thin:@comgend.monsanto.com:1521:comgend" />
         <property name="user" value="BBS_USER" />
-        <property name="password" value="Sep$12345" /> 
+        <property name="password" value="Sep$12345" /> --> 
         <!-- these are connection pool properties for C3P0 -->
-        <property name="minPoolSize" value="3" />
+        <!--<property name="minPoolSize" value="3" />
         <property name="maxPoolSize" value="20" />
         <property name="maxIdleTime" value="30000" />
 	</bean>  
-		
+	-->  
+			
     <!-- Step 2: Setup Hibernate session factory -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="myDataSource" />
@@ -74,7 +76,8 @@
 		      <prop key="hibernate.show_sql">true</prop>
 		   </props>
 		</property>
-   </bean>	    
+   </bean>
+   <!--	    
    	<bean id="sessionFactoryOracle" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="myDataSourceOracle" />
 		<property name="packagesToScan" value="com.vel.springdemo.entity" />
@@ -85,18 +88,21 @@
 		   </props>
 		</property>
    </bean> 
-
+	-->
+	
     <!-- Step 3: Setup Hibernate transaction manager -->
 	<bean id="myTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
     		<property name="sessionFactory" ref="sessionFactory"/>
-    </bean>    
+    </bean> 
+    <!--   
     <bean id="myTransactionManagerOracle" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         	<property name="sessionFactory" ref="sessionFactoryOracle"/>
     </bean>
+    -->
     
     <!-- Step 4: Enable configuration of transactional behavior based on annotations -->
 	<tx:annotation-driven transaction-manager="myTransactionManager" />
-	<tx:annotation-driven transaction-manager="myTransactionManagerOracle" />
+	<!-- <tx:annotation-driven transaction-manager="myTransactionManagerOracle" /> -->
 	
 		
 	<!-- Add support for reading web resources: css, image, js, etc... -->
